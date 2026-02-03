@@ -1,51 +1,57 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mood Map</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="map-page">
   <header class="topbar">
     <div class="brand">Mood Map</div>
     <nav class="nav">
-      <a href="#">About</a>
-      <a href="#">For Partners</a>
+      <a href="quiz.html">診断から選ぶ</a>
+      <a href="#about">About</a>
     </nav>
   </header>
 
-  <main class="hero">
-    <section class="hero-inner">
-      <h1>How do you want to spend your time?</h1>
-      <p class="sub">Choose a mood, not a plan.</p>
+  <main class="map-wrap">
+    <!-- 地図画像の上にピンを置く -->
+    <section class="map">
+      <img class="map-img" src="assets/map.jpg" alt="map" />
 
-      <div class="grid">
-        <a class="card" href="calm.html">
-          <div class="card-title">CALM</div>
-          <div class="card-tag">Slow down. Leave some space.</div>
-          <div class="card-cta">Explore →</div>
-        </a>
+      <!-- ピン（好きなだけ増やせる） -->
+      <a class="pin" style="left:22%; top:35%;" href="results.html?mood=calm">
+        <span class="pin-dot"></span>
+        <span class="pin-label">CALM</span>
+      </a>
 
-        <a class="card" href="challenge.html">
-          <div class="card-title">CHALLENGE</div>
-          <div class="card-tag">Try something real.</div>
-          <div class="card-cta">Explore →</div>
-        </a>
+      <a class="pin" style="left:62%; top:28%;" href="results.html?mood=challenge">
+        <span class="pin-dot"></span>
+        <span class="pin-label">CHALLENGE</span>
+      </a>
 
-        <a class="card" href="refresh.html">
-          <div class="card-title">REFRESH</div>
-          <div class="card-tag">Take a light break.</div>
-          <div class="card-cta">Explore →</div>
-        </a>
+      <a class="pin" style="left:40%; top:62%;" href="results.html?mood=refresh">
+        <span class="pin-dot"></span>
+        <span class="pin-label">REFRESH</span>
+      </a>
 
-        <a class="card" href="connect.html">
-          <div class="card-title">CONNECT</div>
-          <div class="card-tag">Spend time together.</div>
-          <div class="card-cta">Explore →</div>
-        </a>
-      </div>
+      <a class="pin" style="left:74%; top:58%;" href="results.html?mood=connect">
+        <span class="pin-dot"></span>
+        <span class="pin-label">CONNECT</span>
+      </a>
+
+      <!-- 地図上に診断への導線も置ける -->
+      <a class="floating-cta" href="quiz.html">
+        30秒診断で選ぶ →
+      </a>
     </section>
   </main>
+
+  <section class="map-bottom" id="about">
+    <p class="subtle">
+      地図から直感で選ぶ／診断で言葉から選ぶ。どっちでもOK。
+    </p>
+  </section>
 </body>
 </html>
