@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz | Mood Map</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="quiz-page">
+  <header class="topbar">
+    <div class="brand"><a class="plainlink" href="index.html">← 地図に戻る</a></div>
+    <nav class="nav">
+      <a href="index.html">地図から選ぶ</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <section class="hero-inner">
+      <h1>いま、どんな時間がほしい？</h1>
+      <p class="sub">気分で選ぶだけ。おすすめしません。</p>
+
+      <div class="grid">
+        <a class="card" href="results.html?mood=calm">
+          <div class="card-title">CALM</div>
+          <div class="card-tag">落ち着く／余白／ゆっくり</div>
+          <div class="card-cta">選ぶ →</div>
+        </a>
+
+        <a class="card" href="results.html?mood=challenge">
+          <div class="card-title">CHALLENGE</div>
+          <div class="card-tag">挑戦／手を動かす／熱量</div>
+          <div class="card-cta">選ぶ →</div>
+        </a>
+
+        <a class="card" href="results.html?mood=refresh">
+          <div class="card-title">REFRESH</div>
+          <div class="card-tag">リセット／軽め／整う</div>
+          <div class="card-cta">選ぶ →</div>
+        </a>
+
+        <a class="card" href="results.html?mood=connect">
+          <div class="card-title">CONNECT</div>
+          <div class="card-tag">誰かと／チーム／共有</div>
+          <div class="card-cta">選ぶ →</div>
+        </a>
+      </div>
+
+      <div class="note subtle">
+        もっと診断っぽくするなら、次に「誰と一緒？」「どれが近い？」を追加して分岐できます。
+      </div>
+    </section>
+  </main>
+</body>
+</html>
