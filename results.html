@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Results | Mood Map</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="result-page">
+  <header class="topbar">
+    <div class="brand"><a class="plainlink" href="index.html">← 地図</a></div>
+    <nav class="nav">
+      <a href="quiz.html">診断</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <section class="hero-inner">
+      <h1 id="title">Your set</h1>
+      <p class="sub" id="subtitle"></p>
+
+      <div class="grid" id="cards"></div>
+    </section>
+  </main>
+
+  <script>
+    const mood = new URLSearchParams(location.search).get("mood") || "calm";
+
+    const data = {
+      calm: {
+        title: "CALM set",
+        subtitle: "余白／整う／静かに回復する",
+        cards: [
+          { t: "ゲストハウスでリフレッシュ滞在", d: "あたたかいごはん＋静かな朝。" },
+          { t: "現地でお鍋で落ち着く夜", d: "何もしないが許される時間。" },
+        ]
+      },
+      challenge: {
+        title: "CHALLENGE set",
+        subtitle: "挑戦／手を動かす／熱量",
+        cards: [
+          { t: "魚さばき体験＋タイになる体験", d: "うまくできなくてOK。" },
+          { t: "寿司握り体験", d: "体験が話のネタになる。" },
+          { t: "インターン/滞在型チャレンジ", d: "一歩踏み込む人向け。" },
+        ]
+      },
+      refresh: {
+        title: "REFRESH set",
+        subtitle: "軽め／整う／切り替え",
+        cards: [
+          { t: "コワーキングで短期リセット", d: "作業×海の空気。" },
+          { t: "おやつひもの（持ち歩き）", d: "栄養満点、骨ごと食べれる。" },
+        ]
+      },
+      connect: {
+        title: "CONNECT set",
+        subtitle: "誰かと／共有／チーム",
+        cards: [
+          { t: "企業研修×漁村体験", d: "チームの個性が見える。" },
+          { t: "オンライン魚さばき講習セット", d: "魚つき。福利厚生にも。" },
+        ]
+      }
+    };
+
+    const page = data[mood] || data.calm;
+    document.getElementById("title").textContent = page.title;
+    document.getElementById("subtitle").textContent = page.subtitle;
+
+    const root = document.getElementById("cards");
+    root.innerHTML = page.cards.map(c => `
+      <div class="card">
+        <div class="card-title">${c.t}</div>
+        <div class="card-tag">${c.d}</div>
+      </div>
+    `).join("");
+  </script>
+</body>
+</html>
